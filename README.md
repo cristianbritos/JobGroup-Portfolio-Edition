@@ -112,11 +112,11 @@ El sistema fue diseñado utilizando una arquitectura basada en aplicaciones desa
 
 ### Cursos
 
-![Cursos](docs/screenshots/cursos.png)
+![Cursos](docs/screenshots/curso.png)
 
 ### Servicios
 
-![Servicios](docs/screenshots/servicios.png)
+![Servicios](docs/screenshots/servicio.png)
 
 ---
 
