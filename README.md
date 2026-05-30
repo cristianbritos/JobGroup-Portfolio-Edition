@@ -108,22 +108,15 @@ El sistema fue diseñado utilizando una arquitectura basada en aplicaciones desa
 
 ### Página principal
 
-<p align="center">
-  <img src="docs/screenshots/home.png" width="900">
-</p>
+![Home](./docs/screenshots/home.png)
 
 ### Cursos
 
-<p align="center">
-  <img src="docs/screenshots/cursos.png" width="900">
-</p>
+![Cursos](./docs/screenshots/curso.png)
 
 ### Servicios
 
-<p align="center">
-  <img src="docs/screenshots/servicios.png" width="900">
-</p>
-
+![Servicios](./docs/screenshots/servicio.png)
 ---
 
 ## Mi Rol
