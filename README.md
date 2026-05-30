@@ -1,4 +1,3 @@
-```markdown
 # JobGroup Platform (Portfolio Edition)
 
 ## Plataforma de Capacitación, Gestión Académica y Servicios Tecnológicos
@@ -159,4 +158,3 @@ Profesor Universitario
 
 GitHub:
 https://github.com/cristianbritos
-```
