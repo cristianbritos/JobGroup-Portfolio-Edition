@@ -2,7 +2,7 @@
 
 ## Plataforma de Capacitación, Gestión Académica y Servicios Tecnológicos
 
-🔗 Sitio en producción: https://jobgroup.com.ar/
+🔗 Sitio en producción: <https://jobgroup.com.ar/>
 
 ---
 
@@ -116,7 +116,10 @@ El sistema fue diseñado utilizando una arquitectura basada en aplicaciones desa
 ### Servicios
 
 ![Servicios](./docs/screenshots/servicio.png)
----
+
+### Administracion
+
+## ![Administración](./docs/screenshots/admin-cur.png)
 
 ## Mi Rol
 
@@ -157,4 +160,4 @@ Full Stack Developer
 Profesor Universitario
 
 GitHub:
-https://github.com/cristianbritos
+<https://github.com/cristianbritos>
