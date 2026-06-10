@@ -1,0 +1,169 @@
+
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<style>
+    .auth-container {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #37517e 0%, #050A30 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 100%;
+        max-width: 540px;
+    }
+
+    .auth-logo {
+        text-align: center;
+        padding: 2rem 2rem 1rem 2rem;
+    }
+
+    .auth-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+    }
+
+    .input-group-modern {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-control-modern {
+        height: 50px;
+        border-radius: 0.75rem;
+        padding-left: 3rem;
+        border: 2px solid #e5e7eb;
+        transition: all 0.3s ease;
+    }
+
+    .form-control-modern:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    .input-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6b7280;
+        z-index: 2;
+    }
+
+    .form-footer {
+        text-align: center;
+        font-size: 13px;
+    }
+</style>
+
+<div class="auth-container">
+    <div class="glass-card">
+        <div class="auth-logo">
+            <h2 class="auth-title">Crear nuevo usuario</h2>
+        </div>
+        <div class="card-body px-5 pb-5 pt-0">
+            <form action="{% url 'user:user_create' %}" method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <input type="hidden" name="action" value="{{ action }}">
+
+                <div class="input-group-modern">
+                    <i class="fas fa-user input-icon"></i>
+                    {{ form.username|add_class:'form-control form-control-modern'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su username' }}
+                </div>
+                <div class="input-group-modern">
+                    <i class="fas fa-user input-icon"></i>
+                    {{ form.first_name|add_class:'form-control form-control-modern'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su nombre' }}
+                </div>
+                <div class="input-group-modern">
+                    <i class="fas fa-user input-icon"></i>
+                    {{ form.last_name|add_class:'form-control form-control-modern'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su apellido' }}
+                </div>
+                <div class="input-group-modern">
+                    <i class="fas fa-phone input-icon"></i>
+                    {{ form.telefono|add_class:'form-control form-control-modern'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su teléfono' }}
+                </div>
+                <div class="input-group-modern">
+                    <i class="fas fa-envelope input-icon"></i>
+                    {{ form.email|add_class:'form-control form-control-modern'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su email' }}
+                </div>
+                <div class="input-group-modern">
+                    <i class="fas fa-lock input-icon"></i>
+                    {{ form.password|add_class:'form-control form-control-modern'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su contraseña' }}
+                </div>
+                <div class="input-group-modern">
+                    <i class="fas fa-lock input-icon"></i>
+                    {{ form.confirm_password|add_class:'form-control form-control-modern'|attr:'autocomplete:off'|attr:'placeholder:Confirme su contraseña' }}
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-3 mb-3"
+                        style="background: linear-gradient(135deg, #6366f1 0%, #37517e 100%); border: none;">
+                    <i class="fas fa-user-plus me-2"></i> Crear usuario
+                </button>
+
+                <p class="form-footer mt-2">
+                    ¿Ya tienes una cuenta? Haz click <a href="{% url 'login:login' %}">aquí</a> para iniciar sesión.
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    {% if form.errors %}
+        var errors = '';
+        {% for field in form %}
+            {% for error in field.errors %}
+                errors += '{{ error|escapejs }}\n';
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            errors += '{{ error|escapejs }}\n';
+        {% endfor %}
+        Swal.fire({
+            title: 'Error!',
+            text: errors,
+            icon: 'error'
+        });
+    {% endif %}
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var parameters = new FormData(this);
+        submit_with_ajax(
+            window.location.pathname,
+            'Notificación',
+            '¿Estás seguro de realizar esta acción?',
+            parameters,
+            function (response) {
+                if (response.error) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response.error,
+                        icon: 'error',
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Éxito!',
+                        text: 'Usuario creado exitosamente.',
+                        icon: 'success',
+                    }).then(() => {
+                        location.href = '{{ list_url }}';
+                    });
+                }
+            }
+        );
+    });
+</script>
+{% endblock %}

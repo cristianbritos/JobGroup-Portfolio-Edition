@@ -1,0 +1,99 @@
+/* Hero Section Styles */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title .highlight {
+  color: var(--heading-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin: 15px 0;
+  color: #444444;
+}
+
+.hero-subtitle .highlight-alt {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.announcement {
+  font-size: 1.1rem;
+  color: var(--heading-color);
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.announcement span {
+  color: var(--heading-color);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+}
+
+.btn-get-started {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-get-started:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-watch-video {
+  margin-left: 15px;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.hero-img {
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.live-blink {
+  color: red !important;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,61 @@
+{% extends 'login/base.html' %}
+
+{% block content %}
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="{% url 'index' %}"><b>A</b>polo</a>
+        </div>
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Crear nuevo usuario</p>
+                <form action="{% url 'user:user_create' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        {{ form.username }}
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        {{ form.email }}
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        {{ form.password }}
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        {{ form.confirmPassword }}
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-user-plus"></i> Crear usuario
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2" style="font-size: 13px;">
+                        ¿Ya tienes una cuenta? Haz click <a href="{% url 'login' %}">aquí</a> para iniciar sesión.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

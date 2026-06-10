@@ -1,0 +1,882 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Academy - JobGroup</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/icono.png'%}" rel="icon" />
+  <link href="{% static 'assets/img/icono.png'%}" rel="apple-touch-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" />
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet" />
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet'%}" />
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet" />
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet" />
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css'%}" rel="stylesheet" />
+
+  <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="#hero" class="logo d-flex align-items-center me-auto text-decoration-none">
+        <img src="{% static 'assets/img/logo3.png' %}" alt="Logo" class="me-2" style="height: 40px" />
+        <h1 class="sitename m-0" style="font-size: 1.8rem; font-weight: 700; color: rgb(1, 0, 46)">
+          <span style="color: rgb(1, 0, 46)">Academy</span> 2026
+        </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="">Home</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#portfolio">Nuevos Cursos!!!</a></li>
+          <li><a href="#pricing">Precios</a></li>
+
+          <li><a href="#contact">Inscripciones</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      {% if request.user.is_authenticated%}
+      <a class="btn-getstarted" href="{% url 'login:login' %}">Bienvenido: {{ request.user.username }}</a>
+      {% else %}
+      <a class="btn-getstarted" href="{% url 'login:login' %}">Acceso al Aula</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container position-relative">
+        <div class="row gy-4">
+          <!-- Text Section -->
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <!-- Main Heading -->
+            <h1 class="hero-subtitle">
+              <span class="highlight-alt">Domina el Futuro: Tecnología y Conocimiento al Alcance de tus Manos
+              </span>
+            </h1>
+            <!-- Subtitle -->
+            <p class="hero-subtitle">
+              Tu socio estratégico para un
+              <span class="highlight-alt">crecimiento tecnológico sostenible</span>
+            </p>
+
+            <p class="announcement">
+              <strong>🚀 Lanzamiento 2026:</strong> ¡Maestría en Código! Domina
+              <span>Python</span> y <span>C# (.NET)</span> con mentores que lideran la industria.
+              No solo enseñamos tecnología; forjamos a los expertos del mañana con experiencia real del día a día.
+            </p>
+            <p class="announcement">
+              🎓 <strong>¡Prueba sin compromiso!</strong> Todos los <strong>lunes a las 9:30 hs</strong> accede
+              a tu
+              <span class="highlight-alt">primera clase en vivo totalmente GRATIS</span>. Sin letra chica ni inscripción
+              previa. Vive la experiencia JobGroup y decide tu futuro.
+            </p>
+
+            <!-- Call to Action -->
+            <div class="d-flex">
+              <a href="#portfolio" class="btn-get-started">🚀 Quiero Inscribirme Ahora</a>
+              <a href="https://www.youtube.com/watch?v=T3a-WCG1loc&t=19s"
+                class="glightbox btn-watch-video d-flex align-items-center">
+                <i class="bi bi-play-circle"></i>
+                <span>Ver última clase grabada</span>
+              </a>
+            </div>
+          </div>
+          <!-- Image Section -->
+          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'assets/img/hero-img.png' %}" class="img-fluid animated" alt="Hero Image" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    
+    <!-- /Clients Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Servicios</h2>
+        <p>
+          Transforma tu futuro con tecnología y capacitación de vanguardia
+        </p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-code-slash icon"></i></div>
+              <h4>
+                <a href="#contact" class="stretched-link">Software a Medida</a>
+              </h4>
+              <p>
+                Transforma tu visión en realidad. Desarrollamos sistemas inteligentes y escalables
+                que automatizan tus procesos y disparan tu productividad.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-pc-display icon"></i>
+              </div>
+              <h4>
+                <a href="#contact" class="stretched-link">Hardware Personalizado</a>
+              </h4>
+              <p>
+                Equipamiento de alto rendimiento para máxima eficiencia. ¡No gastes de más!
+                Invierte sabiamente en lo que tu empresa realmente necesita.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week icon"></i>
+              </div>
+              <h4>
+                <a href="#contact" class="stretched-link">Cursos</a>
+              </h4>
+              <p>Domina las habilidades del futuro hoy. Formación práctica y personalizada para impulsarte al éxito
+                profesional.</p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar-range icon"></i>
+              </div>
+              <h4>
+                <a href="#contact" class="stretched-link">Capacitaciones</a>
+              </h4>
+              <p>Capacitación corporativa de élite. Potencia el talento de tu equipo y mantente a la vanguardia
+                competitiva.</p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+        </div>
+      </div>
+    </section>
+    <!-- /Services Section -->
+
+    <!-- /Clientes Section -->
+
+    <section id="services" class="services section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Empresas líderes confían en nuestras soluciones:</h2>
+        <p>
+          Muchas gracias por confiar en nuestra empresa. Es un orgullo
+          colaborar con organizaciones líderes en sus sectores.
+        </p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-clipboard-heart-fill icon"></i>
+              </div>
+              <h4>
+                <a href="#contact" class="stretched-link">Colegio Médico de Los Llanos</a>
+              </h4>
+              <p>
+                Asociación civil que reúne a los médicos del centro y sur de
+                la provincia de La Rioja, Argentina, fortaleciendo su
+                comunidad profesional.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-people-fill icon"></i>
+              </div>
+              <h4>
+                <a href="#contact" class="stretched-link">Círculo Odontológico de Los Llanos</a>
+              </h4>
+              <p>
+                Institución dedicada a representar y agrupar a los odontólogos
+                del sur de la provincia de La Rioja, brindando apoyo
+                profesional y capacitación.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-hospital-fill icon"></i>
+              </div>
+              <h4>
+                <a href="#contact" class="stretched-link">Clínica Regional de Los Llanos</a>
+              </h4>
+              <p>
+                Principal centro médico del sur de La Rioja, ofreciendo
+                servicios especializados de segundo y tercer nivel a la
+                comunidad.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-shop icon"></i>
+              </div>
+              <h4>
+                <a href="#contact" class="stretched-link">Stylo Muebles</a>
+              </h4>
+              <p>
+                Empresa líder en ventas de mobiliario en la ciudad de
+                Chamical, destacándose por su calidad y servicio en la
+                provincia de La Rioja.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+        </div>
+      </div>
+    </section>
+    <!-- /Services Section -->
+
+    <!-- /Fin Clientes Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Cursos y Capacitaciones</h2>
+        <p>
+          Cursos personalizados: Aprende exactamente lo que necesitas para
+          triunfar
+        </p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Todos</li>
+            <li data-filter=".filter-app">Basico</li>
+            <li data-filter=".filter-product">Medio</li>
+            <li data-filter=".filter-branding">Avanzado</li>
+          </ul>
+          <!-- End Portfolio Filters -->
+          {% for item in object_list %}
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="col-lg-3 col-md-6 portfolio-item isotope-item {% if item.tip_id == 1 %} filter-app {% elif item.ti_id == 2 %} filter-product {% elif item.tip_id == 3 %} filter-branding {% endif %}">
+              <img src="{{ item.get_flayer }}" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>{{ item.nombre}}</h4>
+                <p>{{ item.nombre}}</p>
+                <a href="{{ item.get_flayer }}" title="{{ item.nombre}}" data-gallery="portfolio-gallery-app"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#contact" title="INSCRIBETE.." class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+            {% endfor %}
+          </div>
+
+          <!-- End Portfolio Container -->
+        </div>
+      </div>
+    </section>
+    <!-- /Portfolio Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>TARIFAS</h2>
+        <p>
+          Cursos personalizados a precios accesibles: Inversión inteligente en
+          tu futuro.
+        </p>
+      </div>
+      <!-- INICIO NUEVO CODIGO -->
+      <section id="about" class="about section pt-0 mt-0">
+        <div class="container">
+          <div class="row justify-content-center gy-4">
+            <div class="col-auto" data-aos="fade-up" data-aos-delay="100">
+              <a href="{% url 'login:login' %}" class="read-more">
+                <span>AULA VIRTUAL</span><i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+            <div class="col-auto" data-aos="fade-up" data-aos-delay="200">
+              <a href="#contact" class="read-more">
+                <span>INSCRIPCIONES</span><i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FIN NUEVO CODIGO -->
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Plan Gratis</h3>
+              <h4><sup>$</sup>0<span> / curso</span></h4>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i> <span>Primera Clase</span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i> <span>Contenido completo</span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i> <span>Guia de estudio</span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i>
+                  <span>Consultas con el Disertante</span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i>
+                  <span>Desarrollo de un Proyecto con Asesoramiento del
+                    Disertante</span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i> <span><strong>Integración de IA Generativa</strong> <span
+                      class="badge bg-danger" style="font-size: 0.7em; vertical-align: text-top;">NUEVO</span></span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i> <span><strong>Desarrollo Asistido por Agentes AI</strong> <span
+                      class="badge bg-danger" style="font-size: 0.7em; vertical-align: text-top;">NUEVO</span></span>
+                </li>
+              </ul>
+              <a href="#contact" class="buy-btn">Adquirir</a>
+            </div>
+          </div>
+          <!-- End Pricing Item -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item featured">
+              <h3>Plan Basico</h3>
+              <h4><sup>$</sup>29.999<span> / curso</span></h4>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i> <span>Primera Clase</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> <span>Contenido completo</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> <span>Guia de estudio</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Consultas con el Disertante</span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i>
+                  <span>Desarrollo de un Proyecto con Asesoramiento del
+                    Disertante</span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i> <span><strong>Integración de IA Generativa</strong> <span
+                      class="badge bg-danger" style="font-size: 0.7em; vertical-align: text-top;">NUEVO</span></span>
+                </li>
+                <li class="na">
+                  <i class="bi bi-x"></i> <span><strong>Desarrollo Asistido por Agentes AI</strong> <span
+                      class="badge bg-danger" style="font-size: 0.7em; vertical-align: text-top;">NUEVO</span></span>
+                </li>
+              </ul>
+              <a href="#contact" class="buy-btn">Adquirir</a>
+            </div>
+          </div>
+          <!-- End Pricing Item -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="pricing-item">
+              <h3>Plan Desarrollador</h3>
+              <h4><sup>$</sup>49.999<span> / curso</span></h4>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i> <span>Primera Clase</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> <span>Contenido completo</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> <span>Guia de estudio</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Consultas con el Disertante</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Desarrollo de un Proyecto con Asesoramiento del
+                    Disertante</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> <span><strong>Integración de IA Generativa</strong> <span
+                      class="badge bg-danger" style="font-size: 0.7em; vertical-align: text-top;">NUEVO</span></span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> <span><strong>Desarrollo Asistido por Agentes AI</strong> <span
+                      class="badge bg-danger" style="font-size: 0.7em; vertical-align: text-top;">NUEVO</span></span>
+                </li>
+              </ul>
+              <a href="#contact" class="buy-btn">Adquirir</a>
+            </div>
+          </div>
+          <!-- End Pricing Item -->
+        </div>
+      </div>
+    </section>
+    <!-- /Pricing Section -->
+
+    <!-- Faq 2 Section -->
+   
+    <!-- /Faq 2 Section -->
+
+    <!-- Inicio Codigo Nuevo 17 de Septiembre 2024 -->
+    <!-- Portfolio Section -->
+     <!-- INICIo Codigo comentado de venta de hardware-->
+    {% comment %}
+    <section id="portfolio" class="portfolio section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>HARDWARE PERSONALIZADO</h2>
+        <p>
+          Diseñamos PC y recomendamos notebooks a medida, para que solo
+          inviertas en lo que realmente necesitás, sin pagar de más por
+          componentes que no vas a usar. Nuestra experiencia nace del uso
+          diario de esta tecnología: sabemos lo que funciona porque lo
+          utilizamos profesionalmente.
+          <a href="#contact" style="color: #2980b9; font-weight: bold; margin-left: 5px">CONSULTÁ PRESUPUESTOS</a>
+        </p>
+      </div>
+
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Todos</li>
+            <li data-filter=".filter-app">Ofimática</li>
+            <li data-filter=".filter-product">Desarrollo</li>
+            <li data-filter=".filter-branding">Gaming</li>
+          </ul>
+          <!-- End Portfolio Filters -->
+          {% for producto in productos %}
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="col-lg-3 col-md-6 portfolio-item isotope-item {% if producto.tip_id == 1 %} filter-app {% elif producto.tip_id == 2 %} filter-product {% elif producto.tip_id == 3 %} filter-branding {% endif %}">
+              <img src="{{ producto.get_image }}" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>{{ producto.name}}</h4>
+                <p>
+                  {{ producto.detalle }};
+                  <strong>Precio: ${{ producto.pvp }}</strong>.
+                </p>
+                <a href="{{ producto.get_image }}" title="{{ producto.name}}" data-gallery="portfolio-gallery-app"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#contact" title="CONSULTANOS.." class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+            {% endfor %}
+          </div>
+
+          <!-- End Portfolio Container -->
+        </div>
+      </div>
+    </section>
+    <!-- /Portfolio Section -->
+   
+    <!-- INICIO NUEVO CODIGO -->
+    <section id="about" class="about section pt-0 mt-0">
+      <div class="container">
+        <div class="row justify-content-center gy-4">
+          <div class="col-auto" data-aos="fade-up" data-aos-delay="100">
+            <a href="https://api.whatsapp.com/send?phone=5493826408890 " class="read-more">
+              <span>WhatsApp</span><i class="bi bi-telephone"></i>
+            </a>
+          </div>
+          <div class="col-auto" data-aos="fade-up" data-aos-delay="200">
+            <a href="#contact" class="read-more">
+              <span>PRESUPUESTOS</span><i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FIN NUEVO CODIGO -->
+    <!-- FIN Codigo Nuevo 17 de Septiembre 2024 -->
+     {% endcomment %} 
+     <!-- FIN Codigo comentado de venta de hardware-->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>INSCRIPCIONES Y VENTAS</h2>
+        <p>
+          Estamos aquí para ayudarte. Contáctanos para más información o
+          asistencia personalizada.
+        </p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Dirección:</h3>
+                  <p><strong>Colon N° 342 - Chamical - La Rioja (Argentina)</strong></p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <a href="https://api.whatsapp.com/send?phone=5493826408890 ">
+                    <h3>WhatsApp</h3>
+                  </a>
+                  <p><strong>+54 3826 408890</strong></p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Correo Electrónico</h3>
+                  <p><strong>jobgroupsa@gmail.com</strong></p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4168.320728614867!2d-66.31655913878551!3d-30.360668631737536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942916c7c39e1c85%3A0xdb4e1c76e3703839!2sClinica%20Regional%20de%20Los%20Llanos!5e0!3m2!1ses!2sar!4v1717036295827!5m2!1ses!2sar"
+                frameborder="0" style="border: 0; width: 100%; height: 270px" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <!-- Inicio  Form -->
+            <form id="contactForm" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200"
+              action="{% url 'index' %}">
+              {% csrf_token %}
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2"><strong>Nombre</strong></label>
+                  <input type="text" name="nombre" id="name-field" class="form-control" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2"><strong>Correo</strong></label>
+                  <input type="email" class="form-control" name="correo" id="email-field" required />
+                </div>
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2"><strong>Asunto</strong></label>
+                  <input type="text" class="form-control" name="asunto" id="subject-field" required />
+                </div>
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2"><strong>Mensaje</strong></label>
+                  <textarea class="form-control" name="mensaje" rows="10" id="message-field" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button class="btn btn-primary" type="button" id="submitButton">
+                    Enviar Mensaje
+                  </button>
+                </div>
+              </div>
+            </form>
+            <!-- End  Form -->
+          </div>
+          <!-- End Contact Form -->
+        </div>
+      </div>
+    </section>
+    <!-- /Contact Section -->
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="">Nosotros</h2>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              En JobGroup Academy, <strong>aceleramos tu éxito</strong>. Fusionamos educación de clase mundial con
+              desarrollo de software de vanguardia para ofrecerte soluciones integrales. Desde formarte en las
+              tecnologías más demandadas hasta construir las herramientas digitales que tu negocio necesita,
+              somos el motor de tu crecimiento y tu aliado estratégico en la era digital.
+            </p>
+            {% if request.user.is_authenticated%}
+            <a href="{% url 'login:login' %}" class="read-more"><span>AULA VIRTUAL</span><i
+                class="bi bi-arrow-right"></i></a>
+            {% else %}
+            <a href="{% url 'login:login' %}" class="read-more"><span>AULA VIRTUAL</span><i
+                class="bi bi-arrow-right"></i></a>
+            {% endif %}
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>
+              Además, contamos con una selección de hardware de última
+              generación, asegurando que siempre dispongas de la tecnología
+              más avanzada y fiable. Con un compromiso inquebrantable con la
+              excelencia, JobGroup Academy es tu socio ideal para el
+              crecimiento y la innovación. Creemos en ofrecer un enfoque
+              completo que abarque desde la educación hasta las herramientas
+              tecnológicas necesarias.
+            </p>
+            <a href="#contact" class="read-more"><span>INSCRIPCIONES</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /About Section -->
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Educación</h4>
+          <ul>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Lic. Prof. Gabriela Romero</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Diseño Curricular</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Correo</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="" style="color: blue"><strong>romero.gabriela14@gmail.com</strong></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Desarrollo</h4>
+          <ul>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Lic. Cristian Britos</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Desarrollo del Software</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Correo</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="" style="color: blue"><strong>britos_cristian@yahoo.com.ar</strong></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Hardware</h4>
+          <ul>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Nahuel Romero</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Diseño y Armado de Hardware</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href=""><strong>Correo</strong></a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="" style="color: blue"><strong>jobgroupsa@gmail.com</strong></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12">
+          <h4>Síguenos</h4>
+          <p>Nuestras redes:</p>
+          <div class="social-links d-flex">
+            <a href="https://www.facebook.com/profile.php?id=61571102002492"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/academy-by-jobgroup/?viewAsMember=true"><i
+                class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>
+        © <span>Copyright</span>
+        <strong class="px-1 sitename">JobGroup</strong>
+        <span>All Rights Reserved (2026)</span>
+      </p>
+      <div class="credits">
+        Designed by
+        <a href="#contact"><strong class="px-1 sitename">JobGroup</strong></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Inicio js-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      const submitButton = document.getElementById("submitButton");
+
+      submitButton.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "X-CSRFToken": form.querySelector("[name=csrfmiddlewaretoken]")
+              .value,
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              alert(
+                "Tu mensaje ha sido enviado con éxito. Gracias por contactarnos. Te responderemos pronto."
+              );
+
+              form.reset();
+            } else {
+              alert("Complete los CAMPOS del Formulario por favor.");
+            }
+          })
+          .catch((error) => {
+            alert("ERROR al enviar el MENSAJE.");
+          });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function checkLiveClassTime() {
+        const now = new Date();
+
+        // Convertir a hora de Argentina
+        const argentinaTime = new Date(
+          now.toLocaleString("en-US", {
+            timeZone: "America/Argentina/Buenos_Aires",
+          })
+        );
+
+        const day = argentinaTime.getDay(); // 0=Dom, 1=Lun...
+        const hours = argentinaTime.getHours();
+        const minutes = argentinaTime.getMinutes();
+
+        const liveSpan = document.getElementById("live-class");
+
+        // Lunes de 9:30 a 10:30
+        // Lunes de 9:30 a 10:30
+        if (
+          day === 1 &&
+          ((hours === 9 && minutes >= 30) || (hours === 10 && minutes < 30))
+        ) {
+          liveSpan.textContent = "🔴 Clase en vivo ahora";
+          liveSpan.classList.add("live-blink");
+          liveLink.href = "https://www.youtube.com/live/XXXXXXXX"; // 👉 Link en vivo
+        } else {
+          liveSpan.textContent = "Ver última clase grabada";
+          liveSpan.classList.remove("live-blink");
+          liveLink.href = "https://www.youtube.com/watch?v=T3a-WCG1loc&t=19s"; // 👉 Link grabado
+        }
+      }
+
+      // Revisar cada 30s
+      setInterval(checkLiveClassTime, 30000);
+      checkLiveClassTime();
+    });
+  </script>
+  <!-- Fin js-->
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js'%}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js'%}"></script>
+</body>
+
+</html>
